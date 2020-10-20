@@ -4,9 +4,9 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
+PROJECT TITLE: App02-ticketmachine
+PURPOSE OF PROJECT: create a machine that prints out train tickets when a user inserts coins
+VERSION or DATE: 18/10/2020
 HOW TO START THIS PROJECT:
-AUTHORS:
+AUTHORS: Modified by Berzin Daruwala
 USER INSTRUCTIONS:

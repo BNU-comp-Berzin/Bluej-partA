@@ -1,0 +1,7 @@
+Ticket ticket1 = new Ticket();
+ticket1.print();
+Destination: , Price 220Ticket ticket1 = new Ticket();
+ticket1.print();
+Destination: , Price 220penceTicket ticket1 = new Ticket();
+ticket1.print();
+Destination:Aylesbury Price 220 pence
