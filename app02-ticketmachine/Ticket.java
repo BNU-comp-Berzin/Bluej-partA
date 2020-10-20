@@ -10,7 +10,7 @@ public class Ticket
 {// instance variables - replace the example below with your own
     public String destination;
     
-    private int price;
+    public int price;
     
     private Date datePurchased = new Date(); 
     
@@ -24,6 +24,14 @@ public class Ticket
         price = 220;
         destination = "Aylesbury";
         datePurchased = new Date();
+        
+        price = 300;
+        destination = "Amersham";
+        datePurchased = new Date();
+        
+        price = 330;
+        destination = "High Wycombe";
+        datePurchased = new Date();
     }
     
     
@@ -34,7 +42,6 @@ public class Ticket
         this.price = price;
         this.destination = destination;
         datePurchased = new Date();
-        
     }
     
     public String getDestination()

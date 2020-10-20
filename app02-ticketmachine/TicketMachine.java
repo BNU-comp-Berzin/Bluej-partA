@@ -22,6 +22,16 @@ public class TicketMachine
     
     private Ticket ticketToAylesbury;
     
+    private Ticket ticketToAmersham;
+    
+    private Ticket ticketToHighWycombe;
+    
+    
+
+    
+    
+    private String issuedTicket;
+    
     /**
      * Create a machine that issues tickets of the given price.
      */
@@ -37,6 +47,10 @@ public class TicketMachine
     private void createTickets()
     {
        ticketToAylesbury = new Ticket("Aylesbury", 220);
+       
+       ticketToAmersham = new Ticket("Amersham", 300);
+       
+       ticketToHighWycombe = new Ticket("High Wycombe", 330);
     }
     /**
      * @Return The price of a ticket.
@@ -45,6 +59,40 @@ public class TicketMachine
     {
         return price;
     }
+    
+    public void insertTenP()
+    {
+        balance = balance + 10;
+        
+        System.out.println("Amount added: 10 pence");
+        System.out.println("balance: " + balance);
+    }
+    
+    public void insertTwentyP()
+    {
+        balance = balance + 20;
+        
+        System.out.println("Amount added: 20 pence");
+        System.out.println("balance: " + balance);
+    }
+    
+    public void insertHundredP()
+    {
+        balance = balance + 100;
+        
+        System.out.println("Amount added: 100 pence");
+        System.out.println("balance: " + balance);
+    }
+    
+    public void insertTwoHundredP()
+    {
+        balance = balance + 200;
+        
+        System.out.println("Amount added: 200 pence");
+        System.out.println("balance: " + balance);
+    }
+    
+    
 
     /**
      * Return The amount of money already inserted for the
@@ -53,23 +101,28 @@ public class TicketMachine
     public int getBalance()
     {
         return balance;
-    }
-
-    /**
-     * Receive an amount of money from a customer.
-     * Check that the amount is sensible.
-     */
-    public void insertMoney(int amount)
+    } 
+    public void destination(String destination)
     {
-        if(amount > 0) 
-        {
-            balance = balance + amount;
-        }
-        else 
-        {
-            System.out.println("Use a positive amount rather than: " +
-                               amount);
-        }
+       if (destination == "Aylesbury")
+       {
+           issuedTicket = ticketToAylesbury.destination;
+           price = ticketToAylesbury.price;
+       }
+       else if (destination == "Amersham")
+       {
+           issuedTicket = ticketToAmersham.destination;
+           price = ticketToAmersham.price;
+       }
+       else if (destination == "High Wycombe")
+       {
+           issuedTicket = ticketToHighWycombe.destination;
+           price = ticketToHighWycombe.price;
+       }
+       else
+       {
+           System.out.println("You must choose an available ticket.");
+       }
     }
 
     /**
@@ -82,7 +135,12 @@ public class TicketMachine
         if(balance >= price) 
         {
             // Simulate the printing of a ticket.
-            
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket:" + issuedTicket); 
+            System.out.println("# " + price + " pence, ");
+            System.out.println("##################");
+            System.out.println();
 
             // Update the total collected with the price.
             total = total + price;
@@ -111,13 +169,19 @@ public class TicketMachine
     
     public void printAllTickets()
     {
-        printHeading();
-        System.out.println();
-        ticketToAylesbury.print();
+       printHeading();
+       System.out.print("Destination " + ticketToAylesbury.destination + " , ");
+       System.out.println("Price: " + ticketToAylesbury.price + " pence");
+        
+       System.out.print("Destination " + ticketToAmersham.destination + " , ");
+       System.out.println("Price: " + ticketToAylesbury.price + " pence");
+       
+       System.out.print("Destination " + ticketToHighWycombe.destination + " , ");
+       System.out.println("Price: " + ticketToHighWycombe.price + " pence");
     }
     
     /**
-     * Prints out the name of the ticket with the hashtag borders
+     * Prints out the heading of the ticket with the hashtag borders
      */
     public void printHeading()
     {
