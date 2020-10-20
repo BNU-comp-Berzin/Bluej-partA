@@ -1,0 +1,72 @@
+TicketMachine ticketMachine = new TicketMachine();
+Ticket ticketToAylesbury = new Ticket("Aylesbury", 220);
+ticketMachine.destination("Aylesbury");
+ticketMachine.insertTwoHundredP();
+Amount added: 200 pence
+balance: 200
+ticketMachine.insertTwentyP();
+Amount added: 20 pence
+balance: 220
+ticketMachine.printTicket();
+##################
+# The BlueJ Line
+# Ticket:Aylesbury
+# 220 pence, 
+##################
+
+Ticket ticketToAmersham = new Ticket("Amersham", 300);
+ticketMachine.destination("Amersham");
+ticketMachine.insertTwoHundredP();
+Amount added: 200 pence
+balance: 200
+ticketMachine.insertHundredP();
+Amount added: 100 pence
+balance: 300
+ticketMachine.printTicket();
+##################
+# The BlueJ Line
+# Ticket:Amersham
+# 300 pence, 
+##################
+
+Ticket ticketToHighWycombe = new Ticket("High Wycombe", 330);
+ticketMachine.destination("High Wycombe");
+ticketMachine.insertTwoHundredP();
+Amount added: 200 pence
+balance: 200
+ticketMachine.insertHundredP();
+Amount added: 100 pence
+balance: 300
+ticketMachine.insertTwentyP();
+Amount added: 20 pence
+balance: 320
+ticketMachine.insertTenP();
+Amount added: 10 pence
+balance: 330
+ticketMachine.printTicket();
+##################
+# The BlueJ Line
+# Ticket:High Wycombe
+# 330 pence, 
+##################
+
+ticketMachine.insertTenP();
+Amount added: 10 pence
+balance: 10
+ticketMachine.printTicket();
+You must insert at least: 320 more cents.
+ticketMachine.insertTwoHundredP();
+Amount added: 200 pence
+balance: 210
+ticketMachine.insertTwoHundredP();
+Amount added: 200 pence
+balance: 410
+ticketMachine.printTicket();
+##################
+# The BlueJ Line
+# Ticket:High Wycombe
+# 330 pence, 
+##################
+
+ticketMachine.refundBalance()
+    returned int 80

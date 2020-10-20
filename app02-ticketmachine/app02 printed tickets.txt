@@ -1,9 +1,0 @@
-ticketMa1.printAllTickets();
-Destination:Aylesbury Price 220 penceTicketMachine ticketMa1 = new TicketMachine();
-ticketMa1.printAllTickets();
-##################
-# The BlueJ Line
-##################
-
-
-Destination:Aylesbury Price 220 pence
