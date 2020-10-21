@@ -53,13 +53,16 @@ public class TicketMachine
        ticketToHighWycombe = new Ticket("High Wycombe", 330);
     }
     /**
-     * @Return The price of a ticket.
+     * Returns The price of a ticket.
      */
     public int getPrice()
     {
         return price;
     }
     
+    /**
+     * Allows the user to insert 10p coins to the machine
+     */
     public void insertTenP()
     {
         balance = balance + 10;
@@ -68,6 +71,9 @@ public class TicketMachine
         System.out.println("balance: " + balance);
     }
     
+    /**
+     * Allows the user to insert 20p coins to the machine
+     */
     public void insertTwentyP()
     {
         balance = balance + 20;
@@ -76,6 +82,9 @@ public class TicketMachine
         System.out.println("balance: " + balance);
     }
     
+    /**
+     * Allows the user to insert £1.00 (100 pence) to the machine
+     */
     public void insertHundredP()
     {
         balance = balance + 100;
@@ -84,6 +93,9 @@ public class TicketMachine
         System.out.println("balance: " + balance);
     }
     
+    /**
+     * Allows the user to insert £2.00 (200 pence) to the machine
+     */
     public void insertTwoHundredP()
     {
         balance = balance + 200;
@@ -102,6 +114,9 @@ public class TicketMachine
     {
         return balance;
     } 
+    /**
+     * Allows the user to set the destination of the ticket to create a price.
+     */
     public void destination(String destination)
     {
        if (destination == "Aylesbury")
@@ -126,9 +141,7 @@ public class TicketMachine
     }
 
     /**
-     * Print a ticket if enough money has been inserted, and
-     * reduce the current balance by the ticket price. Print
-     * an error message if more money is required.
+     * Prints a ticket if enough money is there, prints an error message if there is not enough money
      */
     public void printTicket()
     {
@@ -167,6 +180,9 @@ public class TicketMachine
         return amountToRefund;
     }
     
+    /**
+     * Prints the tickets with a cohesive display, has to be done separately for each ticket
+     */
     public void printAllTickets()
     {
        printHeading();
@@ -181,7 +197,7 @@ public class TicketMachine
     }
     
     /**
-     * Prints out the heading of the ticket with the hashtag borders
+     * Prints out the heading of the ticket with the borders included
      */
     public void printHeading()
     {

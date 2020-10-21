@@ -36,6 +36,9 @@ public class Ticket
     
     
     
+    /**
+     * This constructs the details for the destination of the tickets and the price as an integer
+     */
     public Ticket(String destination, int price)
     {
         // initialise instance variable
@@ -44,14 +47,23 @@ public class Ticket
         datePurchased = new Date();
     }
     
+    /**
+     * This is a function that returns the destination value as a string after the task is performed.
+     */
     public String getDestination()
     {
         return destination;
     }
+    /**
+     * This is a function that returns the price value as an integer after the task is performed.
+     */
     public int getPrice()
     {
         return price;
     }
+    /**
+     * This prints out the ticket details in a coherent order
+     */
     public void print()
     { 
         System.out.print("Destination:" + destination);
