@@ -16,6 +16,8 @@ public class Student
     // the amount of credits for study taken so far
     private int credits;
     
+    private ArrayList<Course> course;
+    
     /**
      * Create a new student with a given name and ID number.
      */
@@ -24,6 +26,10 @@ public class Student
         name = fullName;
         id = studentID;
         credits = 0;
+        
+        //this links the the student class and the couse class together
+        course = new ArrayList<Course>();
+        
     }
 
     /**
@@ -78,10 +84,24 @@ public class Student
     }
     
     /**
-     * Print the student's name and ID number to the output terminal.
+     * // this method will add a course to the student which they are enrolled on
+     */
+    public void enrolOnCourse(Course enrolcourse)
+    {
+        course.add(enrolcourse);
+    }
+    
+    /**
+     * Print the student's name, ID number, credits and course details to the output terminal.
      */
     public void print()
     {
         System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        
+        //This prints out the course title and code
+        for(Course title : course) 
+        {
+            title.print();
+        }
     }
 }

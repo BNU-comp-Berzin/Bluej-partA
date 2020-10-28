@@ -1,0 +1,8 @@
+Student studentBerzin = new Student("Berzin Daruwala", "21905650");
+Course CourseCyber = new Course("Cyber Security", "C100");
+studentBerzin.enrolOnCourse(CourseCyber);
+studentBerzin.enrolOnCourse(CourseCyber);
+studentBerzin.print();
+Berzin Daruwala, student ID: 21905650, credits: 0
+Course Name:Cyber Security, Course ID:C100
+Course Name:Cyber Security, Course ID:C100
