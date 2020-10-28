@@ -10,8 +10,6 @@ public class Module
     private String title;
     private String codeNo;
     private int mark;
-    
-    
    
     // instance variables - replace the example below with your own
 
@@ -24,7 +22,9 @@ public class Module
        this.title = title;
        this.codeNo = codeNo;
     }
-    
+    /**
+     * prints out the details of the course
+     */
     public void print()
     {
         System.out.println("Module: " + codeNo + " " + title + " Mark = " + mark);
