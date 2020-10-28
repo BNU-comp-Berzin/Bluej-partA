@@ -15,6 +15,10 @@ public class Course
     private Module module2;
     private Module module3;
     private Module module4;
+    
+    private int finalMark;
+        
+    private Grades finalgrade;
 
     /**
      * Constructor for objects of class Course
@@ -27,7 +31,9 @@ public class Course
        
         //this is the course name
         this.title = coursename;
-       
+        
+
+        
         module1 = new Module("Programming Concepts", "CO452");
         // add the others 
   
@@ -49,5 +55,14 @@ public class Course
     {
         // this prints out the course details 
         System.out.println("Course Name:" + title + ", Course ID:" + codeNo);
+    }
+    public Grades convertToGrade(int mark)
+    {
+        if((mark >= 0) && (mark < 40))
+        {
+            return Grades.F;
+        }
+        
+        return Grades.X;
     }
 }// end of class
