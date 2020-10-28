@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Module here.
+ * This class represents the modules the students must take with each 4 having a total mark of 100
  *
  * @author (Berzin Daruwala)
  * @version (28/10/2020)
@@ -22,6 +22,21 @@ public class Module
        this.title = title;
        this.codeNo = codeNo;
     }
+    
+   public void awardMark(int mark)
+   {
+        
+    if((mark >= 0) &&(mark <= 100))
+    {
+        this.mark = mark;
+    }
+    else
+    {
+        System.out.print("Invalid mark!!!");
+    }
+    
+    }
+         
     /**
      * prints out the details of the course
      */

@@ -33,9 +33,12 @@ public class Course
   
     }
     
-    public void addModule (Module module, int moduleNo)
+    public void addMark (int mark, int moduleNo)
     {
-        
+        if(moduleNo == 1)
+        {
+            module1.awardMark(mark);
+        }
     }
     /**
      * Prints out details of the course
