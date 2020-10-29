@@ -23,8 +23,13 @@ public class Module
        this.codeNo = codeNo;
     }
     
-   public void awardMark(int mark)
-   {
+    public int getMark()
+    {
+        return mark;
+    }
+    
+    public void awardMark(int mark)
+    {
         
     if((mark >= 0) &&(mark <= 100))
     {

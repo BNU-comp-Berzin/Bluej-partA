@@ -2,8 +2,8 @@
 /**
  * Write a description of class Course here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Berzin Daruwala)
+ * @version (28/10/2020)
  */
 public class Course
 {
@@ -22,7 +22,7 @@ public class Course
 
     /**
      * Constructor for objects of class Course
-     * Storws the title and code number
+     * Stores the title and code number
      */
     public Course(String coursename, String courseID)
     {
@@ -33,11 +33,14 @@ public class Course
         this.title = coursename;
         
 
-        
         module1 = new Module("Programming Concepts", "CO452");
+        module2 = new Module("Computer architchectures", "CO452");
+        module3 = new Module("Web development", "CO451");
         // add the others 
   
     }
+    
+    private int ModuleNo;
     
     public void addMark (int mark, int moduleNo)
     {
@@ -45,6 +48,12 @@ public class Course
         {
             module1.awardMark(mark);
         }
+    }
+    public void calculateFinalMark()
+    {
+        int total = module1.getMark() + module2.getMark() + module3.getMark() + module4.getMark();
+        
+        finalMark = total / ModuleNo;
     }
     /**
      * Prints out details of the course
@@ -61,6 +70,22 @@ public class Course
         if((mark >= 0) && (mark < 40))
         {
             return Grades.F;
+        }
+        if((mark >= 40) && (mark < 49))
+        {
+            return Grades.D;
+        }
+        if((mark >= 50) && (mark < 59))
+        {
+            return Grades.C;
+        }
+        if((mark >= 60) && (mark < 69))
+        {
+            return Grades.B;
+        }
+        if((mark >= 70) && (mark < 100))
+        {
+            return Grades.A;
         }
         
         return Grades.X;
