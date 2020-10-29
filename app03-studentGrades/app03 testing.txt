@@ -1,0 +1,24 @@
+Student studentBerzin = new Student("Berzin Daruwala", "21905650");
+Course coursecyber = new Course("Cyber Security", "Course ID");
+studentBerzin.enrolOnCourse(coursecyber);
+coursecyber.addModule("Programming Concepts", "CO452");
+coursecyber.addModule("Game development in java", "CO453");
+coursecyber.addModule("HTML coding", "CO454");
+coursecyber.addModule("Advanced Programming", "CO455");
+coursecyber.addMark(19, 1);
+coursecyber.addMark(20, 2);
+coursecyber.addMark(15, 3);
+coursecyber.addMark(17, 4);
+coursecyber.calculateFinalMark();
+71
+coursecyber.convertToGrade()
+    returned Object A
+coursecyber.print();
+Module: CO452 Programming Concepts Mark = 19
+Module: CO453 Game development in java Mark = 20
+Module: CO454 HTML coding Mark = 15
+Module: CO455 Advanced Programming Mark = 17
+.....................................
+Course: Cyber Security, Course ID: Course ID
+.....................................
+

@@ -1,0 +1,7 @@
+Student studentBerzin = new Student("Berzin Daruwala", "21905650");
+Course courseCyber = new Course("Cyber Security", "Course ID");
+studentBerzin.enrolOnCourse(courseCyber);
+Module module1 = new Module("Programming concepts", "CO452");
+Module module2 = new Module("Game development in java", "CO453");
+Module module3 = new Module("HTML Coding", "CO454");
+Module module4 = new Module("Advanced Programming", "CO454");

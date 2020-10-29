@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class Course here.
  *
@@ -18,7 +18,17 @@ public class Course
     
     private int finalMark;
         
-    private Grades finalgrade;
+    private String finalGrade;
+    
+    private int total;
+    
+    private int moduleNo;
+    
+    private int nomodules;
+    
+    
+    private int mark;
+    
 
     /**
      * Constructor for objects of class Course
@@ -34,26 +44,66 @@ public class Course
         
 
         module1 = new Module("Programming Concepts", "CO452");
-        module2 = new Module("Computer architchectures", "CO452");
-        module3 = new Module("Web development", "CO451");
+        module2 = new Module("Game development in java", "CO453");
+        module3 = new Module("HTML coding", "CO454");
+        module4 = new Module("Advanced programming", "CO455");
+        
+        nomodules = 4;
+        
         // add the others 
   
-    }
-    
-    private int ModuleNo;
-    
-    public void addMark (int mark, int moduleNo)
-    {
-        if(moduleNo == 1)
-        {
-            module1.awardMark(mark);
-        }
     }
     public void calculateFinalMark()
     {
         int total = module1.getMark() + module2.getMark() + module3.getMark() + module4.getMark();
         
-        finalMark = total / ModuleNo;
+        finalMark = module1.getMark() + module2.getMark() + module3.getMark() + module4.getMark();
+        
+        System.out.println(finalMark);
+    }
+    public void printGrade()
+    {
+        System.out.println(total);
+    }
+     public void addModule(String moduleName, String moduleCode)
+    {
+       if(nomodules ==1)
+        {
+            module1 = new Module(moduleName, moduleCode);
+        }
+        else if (nomodules ==2)
+        {
+            module2 = new Module(moduleName, moduleCode);
+        }
+        else if (nomodules ==3)
+        {
+            module3 = new Module(moduleName, moduleCode);
+        }
+        else if (nomodules ==4)
+        {
+            module4 = new Module(moduleName, moduleCode);
+        }
+    }
+    
+    public void addMark (int mark, int moduleNo)
+    {
+    if(moduleNo == 1)
+    {
+        module1.awardMark(mark); 
+    }
+    else if(moduleNo == 2)
+    {
+        module2.awardMark(mark);
+    }
+    else if(moduleNo == 3)
+    {
+        module3.awardMark(mark);
+    }
+    else if(moduleNo == 4)
+    {
+        module4.awardMark(mark);
+    }
+    
     }
     /**
      * Prints out details of the course
@@ -62,32 +112,50 @@ public class Course
      */
     public void print()
     {
-        // this prints out the course details 
-        System.out.println("Course Name:" + title + ", Course ID:" + codeNo);
-    }
-    public Grades convertToGrade(int mark)
+    if (nomodules <= 3)
     {
-        if((mark >= 0) && (mark < 40))
+        System.out.println("Invalid number of modules");
+        System.out.println("Current number of modules: " + nomodules);
+    }
+    else
+    {
+        module1.print();
+        module2.print();
+        module3.print();
+        module4.print();
+        
+        System.out.println(".....................................");
+        System.out.println("Course: " + title + ", Course ID: " + codeNo);
+        System.out.println(".....................................");
+        System.out.println("You have been awarded a:" + finalGrade);
+        
+    }
+        
+        
+    }
+    public Grades convertToGrade()
+    {
+        if(finalMark < 40)
         {
             return Grades.F;
         }
-        if((mark >= 40) && (mark < 49))
+        else if((finalMark >= 40) && (finalMark < 49))
         {
             return Grades.D;
         }
-        if((mark >= 50) && (mark < 59))
+        else if((finalMark >= 50) && (finalMark< 59))
         {
             return Grades.C;
         }
-        if((mark >= 60) && (mark < 69))
+        else if((finalMark >= 60) && (finalMark < 69))
         {
             return Grades.B;
         }
-        if((mark >= 70) && (mark < 100))
+        else if((finalMark >= 70) && (finalMark < 100))
         {
             return Grades.A;
         }
-        
         return Grades.X;
+        
     }
 }// end of class
