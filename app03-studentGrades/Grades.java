@@ -1,6 +1,6 @@
 
 /**
- * Enumeration class Grades - write a description of the enum class here
+ * Enumeration class Grades - the enum class is consisting of a set of unchanged varibales that are fixed constantly such as the days of the week.
  *
  * @author (Berzin Daruwala)
  * @version (28/10/2020)

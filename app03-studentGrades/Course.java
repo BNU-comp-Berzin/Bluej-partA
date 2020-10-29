@@ -1,6 +1,7 @@
 import java.util.*;
 /**
- * Write a description of class Course here.
+ * The course class is what the student will be enrolled in and where the 4 modules will be stored, additionaly the grade boundary data is stored here too
+ * 
  *
  * @author (Berzin Daruwala)
  * @version (28/10/2020)
@@ -53,6 +54,9 @@ public class Course
         // add the others 
   
     }
+    /**
+     * This code calculates the final mark of the modules, with the highest valid mark being 25 per module 
+     */
     public void calculateFinalMark()
     {
         int total = module1.getMark() + module2.getMark() + module3.getMark() + module4.getMark();
@@ -61,11 +65,17 @@ public class Course
         
         System.out.println(finalMark);
     }
+    /**
+     * This code prints out the grade
+     */
     public void printGrade()
     {
         System.out.println(total);
     }
-     public void addModule(String moduleName, String moduleCode)
+    /**
+     * This displays the module name and its code 
+     */ 
+    public void addModule(String moduleName, String moduleCode)
     {
        if(nomodules ==1)
         {
@@ -85,6 +95,9 @@ public class Course
         }
     }
     
+    /**
+     * This code allows the module to recieve a mark, which is then totalled up later
+     */
     public void addMark (int mark, int moduleNo)
     {
     if(moduleNo == 1)
@@ -106,7 +119,7 @@ public class Course
     
     }
     /**
-     * Prints out details of the course
+     * Prints out details of the course 
      *
      *
      */
@@ -133,6 +146,9 @@ public class Course
         
         
     }
+    /**
+     * This shows the grade boundaries, whilst acting as the mark to grade conversion system
+     */
     public Grades convertToGrade()
     {
         if(finalMark < 40)

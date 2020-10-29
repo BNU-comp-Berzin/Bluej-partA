@@ -25,15 +25,19 @@ public class Module
        this.title = title;
        this.codeNo = codeNo;
     }
-    
+    /**
+     * This allows returns the value of mark allowing to be used in calculation methods
+     */
     public int getMark()
     {
         return mark;
     }
-    
+    /**
+    * This awards a valid mark, which does not let it go above 25 (the max per module)
+    */
     public void awardMark(int mark)
     {
-        if((mark >= 0) && (mark <= 100))
+        if((mark >= 0) && (mark <= 25))
     {
         this.mark = mark;
     }
@@ -41,9 +45,7 @@ public class Module
     {
          System.out.print("Invalid mark!!!");
     }
-    
-    }
-         
+    }     
     /**
      * prints out the details of the course
      */
