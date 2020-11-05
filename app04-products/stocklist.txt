@@ -1,0 +1,19 @@
+StockManager stock = new StockManager();
+StockDemo stockDem1 = new StockDemo(stock);
+stock.printHeading();
+
+===================
+Berzin's stock list
+===================
+
+stock.printAllProducts();
+101: Television stock level: 0
+102: Motorola android phone stock level: 0
+103: Washing machine stock level: 0
+104: LED stock level: 0
+105: Toshiba Laptop stock level: 0
+106: Belkin Router stock level: 0
+107: Wi-fi Extender stock level: 0
+108: Freezer stock level: 0
+109: Microwave stock level: 0
+110: Toaster stock level: 0

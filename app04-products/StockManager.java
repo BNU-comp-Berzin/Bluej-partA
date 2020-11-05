@@ -39,6 +39,11 @@ public class StockManager
     {
     }
     
+    public void sellProduct(int id, int quantity)
+    {
+        Product product = findProduct(id);
+    }
+    
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
@@ -78,5 +83,14 @@ public class StockManager
             //product.print();
             System.out.println(product);
         }
+    }
+    
+    public void printHeading()
+    {
+        System.out.println();
+        System.out.println("===================");
+        System.out.println("Berzin's stock list");
+        System.out.println("===================");
+        System.out.println();
     }
 }
