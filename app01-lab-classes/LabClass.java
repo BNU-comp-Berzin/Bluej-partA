@@ -21,7 +21,7 @@ public class LabClass
     
     /**
      * Create a LabClass with a maximum number of enrolments. All other details
-     * are set to default values.
+     * are set to default values. 
      */
     public LabClass(int maxNumberOfStudents)
     {

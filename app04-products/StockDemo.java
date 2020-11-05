@@ -1,3 +1,4 @@
+
 /**
  * Demonstrate the StockManager and Product classes.
  * The demonstration becomes properly functional as
@@ -15,12 +16,20 @@ public class StockDemo
      * Create a StockManager and populate it with a few
      * sample products.
      */
-    public StockDemo()
+    public StockDemo(StockManager manager)
     {
-        manager = new StockManager();
-        manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
-        manager.addProduct(new Product(23,  "Microwave Oven"));
+        this.manager = manager;
+        
+        manager.addProduct(new Product(101,  "Television"));
+        manager.addProduct(new Product(102,  "Motorola android phone"));
+        manager.addProduct(new Product(103,  "Washing machine"));
+        manager.addProduct(new Product(104,  "LED"));
+        manager.addProduct(new Product(105,  "Toshiba Laptop"));
+        manager.addProduct(new Product(106,  "Belkin Router"));
+        manager.addProduct(new Product(107,  "Wi-fi Extender"));
+        manager.addProduct(new Product(108,  "Freezer"));
+        manager.addProduct(new Product(109,  "Microwave"));
+        manager.addProduct(new Product(110,  "Toaster"));
     }
     
     /**
@@ -68,7 +77,6 @@ public class StockDemo
             showDetails(id);
         }
     }
-    
     /**
      * Get the product with the given id from the manager.
      * An error message is printed if there is no match.
