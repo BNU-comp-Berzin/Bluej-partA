@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
@@ -37,11 +36,25 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        Product product = findProduct(id);
+        if(product != null)
+        {
+            product.sell(amount);
+        }
+        else
+        {
+            System.out.println("invalid product id" + id);
+        }
     }
     
     public void sellProduct(int id, int quantity)
     {
         Product product = findProduct(id);
+        
+        if(product != null)
+        {
+            product.sell(quantity);
+        }
     }
     
     /**
@@ -51,6 +64,13 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
+        for(Product product : stock)
+        {
+            if(product.getID() == id)
+            {
+                return product;
+            }
+        }
         return null;
     }
     
@@ -61,16 +81,23 @@ public class StockManager
      * @param id The ID of the product.
      * @return The quantity of the given product in stock.
      */
-    public int numberInStock(int id)
+    public int numberProductsInStock()
     {
-        return 0;
+        return stock.size();
     }
-
+    
     /**
-     * Print details of all the products.
+     * Show details of the given product. If found,
+     * its name and stock quantity will be shown.
+     * @param id The ID of the product to look for.
      */
-    public void printProductDetails()
+    public void printDetails(int id)
     {
+        Product product = findProduct(id);
+        if(product != null) 
+        {
+            System.out.println(product.toString());
+        }
     }
     
     /**
@@ -78,6 +105,7 @@ public class StockManager
      */
     public void printAllProducts()
     {
+        printHeading();
         for(Product product : stock)
         {
             //product.print();
@@ -85,7 +113,7 @@ public class StockManager
         }
     }
     
-    public void printHeading()
+    private void printHeading()
     {
         System.out.println();
         System.out.println("===================");

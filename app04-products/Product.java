@@ -23,7 +23,6 @@ public class Product
     {
         this.id = id;
         this.name = name;
-        quantity = 0;
     }
 
     /**
@@ -78,7 +77,7 @@ public class Product
         else 
         {
             System.out.println("Attempt to restock " + name +
-                               " with a non-positive amount: " + amount);
+                               " with a negative or zero amount: " + amount);
         }
     }
 
@@ -86,16 +85,19 @@ public class Product
      * Sell one of these products.
      * An error is reported if there appears to be no stock.
      */
-    public void sellOne()
+    public void sell(int saleQuantity)
     {
-        if(quantity > 0) 
-        {
-            quantity--;
-        }
-        else 
-        {
+       if(saleQuantity >= quantity) 
+       {
+            System.out.println("only " + quantity + " " + name + " in stock, but there were " + saleQuantity + " ordered ");
+            
+            quantity = 10;
+       }
+       else 
+       {
             System.out.println(
-                "Attempt to sell an out of stock item: " + name);
-        }
+                " Selling " + saleQuantity + " of stock item: " + name);
+                quantity -= saleQuantity;
+       }
     }
 }
