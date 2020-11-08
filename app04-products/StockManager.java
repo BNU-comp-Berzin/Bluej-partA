@@ -47,6 +47,9 @@ public class StockManager
         }
     }
     
+    /**
+     * This method allows the appropriate product to be sold from using its unique id and by the quantity 
+     */
     public void sellProduct(int id, int quantity)
     {
         Product product = findProduct(id);
@@ -57,6 +60,19 @@ public class StockManager
         }
     }
     
+    /**
+     * prints the name of the product
+     */
+    public void PrintName(String findName)
+    {
+        for(Product product : stock)
+        {
+            if(product.getName().contains(findName))
+            {
+                System.out.println(product);
+            }
+        }
+    }
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
@@ -101,6 +117,45 @@ public class StockManager
     }
     
     /**
+     * This allows for a product to be renamed by inserting its unique id, and changing the name.
+     */
+    public void renameProduct(int id, String name)
+    {
+        Product product = findProduct(id);
+        if(product != null)
+        {
+            product.setName(name);
+        }
+        else
+        {
+            printInvalidID();
+        }
+    }
+    
+    /**
+     * prints error message if returned with invalid product ID
+     */
+    private void printInvalidID()
+    {
+        System.out.println("Invalid product");
+    }
+    
+    /**
+     * prints name with a findName function
+     */
+    public void printName(String findName)
+    {
+        printHeading();
+        System.out.println("products Names with: " + findName + " : ");
+        for(Product product : stock)
+        {
+            if(product.getName().contains(findName))
+            {
+                System.out.println(product);
+            }
+        }
+    }
+    /**
      * This method will be used to print out all the stock
      */
     public void printAllProducts()
@@ -119,6 +174,21 @@ public class StockManager
         System.out.println("===================");
         System.out.println("Berzin's stock list");
         System.out.println("===================");
+        System.out.println();
+    }
+    
+    /**
+     * print function is used if product amount is low 
+     */
+    public void printLowStock()
+    {
+        for(Product product : stock)
+        {
+            if(product.getQuantity() < 5)
+            {
+                System.out.println("product stock low" + product.toString());
+            }
+        }
         System.out.println();
     }
 }

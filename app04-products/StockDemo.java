@@ -48,20 +48,18 @@ public class StockDemo
       manager.printAllProducts();
         
       int noProducts = manager.numberProductsInStock();
-      int amount = 0;
-      System.out.println("No of products in stock = " + noProducts);
       
-      for(int id = 101; id <= 110; id++)
-      {
-          amount = generator.nextInt(8);
-          manager.delivery(id, amount);
-      }
-      manager.printAllProducts();
+      int amount = 0;
+      
+      System.out.println("No of products in stock = " + noProducts);
       
       demoDeliverProducts();
       demoSellProducts();
     }
     
+    /**
+     *Sells the products with a maxmimum of 20 being the amount ordered 
+     */
     private void demoSellProducts()
     {
       System.out.println("\nSelling all the products\n");
@@ -69,22 +67,25 @@ public class StockDemo
       System.out.println();
       for(int id = 101; id <= 110; id++)
       {
-          amount = generator.nextInt(10);
+          amount = generator.nextInt(20);
           manager.sellProduct(id, amount);
       }
         
       manager.printAllProducts();
     }
     
+    /**
+     * Delivers a maximum of 20 products, with a print functin to show a clear display 
+     */
     private void demoDeliverProducts()
     {
       System.out.println("\nDelivering all the products\n");
       System.out.println("============================");
       System.out.println();
-      for(int id = 101; id <= 110; id++)
+       for(int id = 101; id <= 110; id++)
       {
-          amount = generator.nextInt(10);
-          manager.delivery(id, amount);
+         amount = generator.nextInt(20);
+         manager.delivery(id, amount);
       }
        
       manager.printAllProducts();

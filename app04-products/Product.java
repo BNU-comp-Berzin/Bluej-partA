@@ -41,6 +41,9 @@ public class Product
         return name;
     }
     
+    /**
+     * sets the name of the product 
+     */
     public void setName (String name)
     {
         this.name = name; 

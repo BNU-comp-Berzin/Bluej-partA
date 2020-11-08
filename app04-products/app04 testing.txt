@@ -1,102 +1,86 @@
+StockManager stock = new StockManager();
+StockDemo stockDem1 = new StockDemo(stock);
+stock.renameProduct(101, "Washing machine");
 stockDem1.runDemo();
 
 ===================
 Berzin's stock list
 ===================
 
-101: Television stock level: 10
-102: Motorola android phone stock level: 10
-103: Washing machine stock level: 5
-104: LED stock level: 10
-105: Toshiba Laptop stock level: 7
-106: Belkin Router stock level: 10
-107: Wi-fi Extender stock level: 2
-108: Freezer stock level: 7
-109: Microwave stock level: 10
-110: Toaster stock level: 10
+101: Washing machine stock level: 0
+102: Motorola android phone stock level: 0
+103: Washing machine stock level: 0
+104: LED stock level: 0
+105: Toshiba Laptop stock level: 0
+106: Belkin Router stock level: 0
+107: Wi-fi Extender stock level: 0
+108: Freezer stock level: 0
+109: Microwave stock level: 0
+110: Toaster stock level: 0
 No of products in stock = 10
- Selling 7 of stock item: Television
- Selling 3 of stock item: Motorola android phone
- Selling 2 of stock item: Washing machine
- Selling 7 of stock item: LED
- Selling 3 of stock item: Toshiba Laptop
- Selling 6 of stock item: Belkin Router
-only 2 Wi-fi Extender in stock, but there were 7 ordered 
- Selling 1 of stock item: Freezer
- Selling 5 of stock item: Microwave
- Selling 1 of stock item: Toaster
-
-===================
-Berzin's stock list
-===================
-
-101: Television stock level: 3
-102: Motorola android phone stock level: 7
-103: Washing machine stock level: 3
-104: LED stock level: 3
-105: Toshiba Laptop stock level: 4
-106: Belkin Router stock level: 4
-107: Wi-fi Extender stock level: 10
-108: Freezer stock level: 6
-109: Microwave stock level: 5
-110: Toaster stock level: 9
 
 Delivering all the products
 
 ============================
 
-only 3 Television in stock, but there were 4 ordered 
-only 7 Motorola android phone in stock, but there were 9 ordered 
- Selling 2 of stock item: Washing machine
-only 3 LED in stock, but there were 9 ordered 
- Selling 3 of stock item: Toshiba Laptop
- Selling 2 of stock item: Belkin Router
- Selling 3 of stock item: Wi-fi Extender
- Selling 2 of stock item: Freezer
-only 5 Microwave in stock, but there were 8 ordered 
- Selling 2 of stock item: Toaster
+only 0 Washing machine in stock, but there were 15 ordered 
+only 0 Motorola android phone in stock, but there were 18 ordered 
+only 0 Washing machine in stock, but there were 2 ordered 
+only 0 LED in stock, but there were 16 ordered 
+only 0 Toshiba Laptop in stock, but there were 6 ordered 
+only 0 Belkin Router in stock, but there were 7 ordered 
+only 0 Wi-fi Extender in stock, but there were 14 ordered 
+only 0 Freezer in stock, but there were 9 ordered 
+only 0 Microwave in stock, but there were 0 ordered 
+only 0 Toaster in stock, but there were 2 ordered 
 
 ===================
 Berzin's stock list
 ===================
 
-101: Television stock level: 10
+101: Washing machine stock level: 10
 102: Motorola android phone stock level: 10
-103: Washing machine stock level: 1
+103: Washing machine stock level: 10
 104: LED stock level: 10
-105: Toshiba Laptop stock level: 1
-106: Belkin Router stock level: 2
-107: Wi-fi Extender stock level: 7
-108: Freezer stock level: 4
+105: Toshiba Laptop stock level: 10
+106: Belkin Router stock level: 10
+107: Wi-fi Extender stock level: 10
+108: Freezer stock level: 10
 109: Microwave stock level: 10
-110: Toaster stock level: 7
+110: Toaster stock level: 10
 
 Selling all the products
 
 ============================
 
- Selling 4 of stock item: Television
- Selling 6 of stock item: Motorola android phone
-only 1 Washing machine in stock, but there were 5 ordered 
- Selling 3 of stock item: LED
-only 1 Toshiba Laptop in stock, but there were 3 ordered 
-only 2 Belkin Router in stock, but there were 6 ordered 
-only 7 Wi-fi Extender in stock, but there were 8 ordered 
-only 4 Freezer in stock, but there were 7 ordered 
- Selling 5 of stock item: Microwave
-only 7 Toaster in stock, but there were 8 ordered 
+only 10 Washing machine in stock, but there were 14 ordered 
+only 10 Motorola android phone in stock, but there were 17 ordered 
+only 10 Washing machine in stock, but there were 17 ordered 
+only 10 LED in stock, but there were 10 ordered 
+ Selling 6 of stock item: Toshiba Laptop
+only 10 Belkin Router in stock, but there were 14 ordered 
+ Selling 6 of stock item: Wi-fi Extender
+only 10 Freezer in stock, but there were 18 ordered 
+ Selling 8 of stock item: Microwave
+ Selling 6 of stock item: Toaster
 
 ===================
 Berzin's stock list
 ===================
 
-101: Television stock level: 6
-102: Motorola android phone stock level: 4
+101: Washing machine stock level: 10
+102: Motorola android phone stock level: 10
 103: Washing machine stock level: 10
-104: LED stock level: 7
-105: Toshiba Laptop stock level: 10
+104: LED stock level: 10
+105: Toshiba Laptop stock level: 4
 106: Belkin Router stock level: 10
-107: Wi-fi Extender stock level: 10
+107: Wi-fi Extender stock level: 4
 108: Freezer stock level: 10
-109: Microwave stock level: 5
-110: Toaster stock level: 10
+109: Microwave stock level: 2
+110: Toaster stock level: 4
+stock.printLowStock();
+product stock low105: Toshiba Laptop stock level: 4
+product stock low107: Wi-fi Extender stock level: 4
+product stock low109: Microwave stock level: 2
+product stock low110: Toaster stock level: 4
+
