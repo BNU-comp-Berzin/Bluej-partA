@@ -82,7 +82,7 @@ public class StockDemo
       System.out.println("\nDelivering all the products\n");
       System.out.println("============================");
       System.out.println();
-       for(int id = 101; id <= 110; id++)
+      for(int id = 101; id <= 110; id++)
       {
          amount = generator.nextInt(20);
          manager.delivery(id, amount);

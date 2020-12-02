@@ -28,6 +28,19 @@ public class StockManager
         stock.add(item);
     }
     
+    public void removeProduct(int id)
+    {
+        Product product = findProduct(id);
+        if (product != null)
+        {
+            product.removeProduct(id);
+        }
+        else
+        {
+            printInvalidID();
+        }
+    }
+    
     /**
      * Receive a delivery of a particular product.
      * Increase the quantity of the product by the given amount.

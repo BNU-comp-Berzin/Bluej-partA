@@ -24,7 +24,12 @@ public class Product
         this.id = id;
         this.name = name;
     }
-
+    
+    public void removeProduct(int id)
+    {
+        name = null;
+        this.id = 0;
+    }
     /**
      * @return The product's id.
      */
