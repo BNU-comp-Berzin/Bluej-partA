@@ -28,6 +28,9 @@ public class StockManager
         stock.add(item);
     }
     
+    /**
+     * Removes a product from the list if it has a valid id
+     */
     public void removeProduct(int id)
     {
         Product product = findProduct(id);
@@ -63,14 +66,23 @@ public class StockManager
     /**
      * This method allows the appropriate product to be sold from using its unique id and by the quantity 
      */
-    public void sellProduct(int id, int quantity)
+    public void sellProduct(int id, int amount)
     {
         Product product = findProduct(id);
         
         if(product != null)
         {
-            product.sell(quantity);
+            product.sell(amount);
         }
+    }
+    
+    public boolean isDuplicate(int id)
+    {
+        Product product = findProduct(id);
+        if(product == null)
+           return false;
+        else
+           return true;
     }
     
     /**
@@ -114,7 +126,6 @@ public class StockManager
     {
         return stock.size();
     }
-    
     /**
      * Show details of the given product. If found,
      * its name and stock quantity will be shown.

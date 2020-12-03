@@ -30,6 +30,21 @@ public class Product
         name = null;
         this.id = 0;
     }
+    
+    public void deliver (int amount)
+    {
+        if(amount > 0)
+        {
+            quantity += amount;
+            
+            System.out.println("Delivered" + amount + " " + name);
+        }
+        else
+        {
+            System.out.println("Attempting to restock" + name + "with a non-positive amount: " + amount);
+        }
+    }
+    
     /**
      * @return The product's id.
      */
