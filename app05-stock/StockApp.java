@@ -16,8 +16,12 @@ public class StockApp
     private StockManager manager;
 
     private StockDemo demo;
+    
+    private Random generator = new Random();
+    public int amount = 100;
 
     public int id;
+    
 
     /**
      * Constructor for objects of class StockApp
@@ -70,9 +74,17 @@ public class StockApp
         {
             printAllProducts();
         }
-        else if(choice.equals("Deliver"))
+        else if(choice.equals("DELIVER"))
         {
             deliverProduct();
+        }
+        else if(choice.equals("SEARCH"))
+        {
+            searchProduct();
+        }
+        else if(choice.equals("RESTOCK"))
+        {
+            restockProduct();
         }
     }
 
@@ -97,15 +109,17 @@ public class StockApp
         System.out.println("Enter the product name");
 
         String name = input.getString();
+        System.out.println("Enter a product ID");
+
+        String value = input.getString();
+
+        int id = Integer.parseInt(value);
         if(manager.isDuplicate(id))
         {
             System.out.println("Duplicate ID");   
         }
         else
         {
-            System.out.println("Enter a product ID");
-            String value = input.getString();
-            int id = Integer.parseInt(value);
             Product product = new Product(id, name);
 
             manager.addProduct(product);
@@ -113,7 +127,7 @@ public class StockApp
             System.out.println("\nNew Product added" + product + "\n");   
         }
     }
-
+    
     /**
      * delivers products
      */
@@ -129,10 +143,40 @@ public class StockApp
         int amount = enterQuantity();
 
         manager.delivery(id, amount);
-        System.out.println("\nDelivered Product");
+        
 
     }
+    
+    private void restockProduct()
+    {
+        System.out.println("\nRestocking Products");
+        System.out.println("Enter a product ID");
 
+        String value = input.getString();
+
+        int id = Integer.parseInt(value);
+
+        int amount = enterQuantity();
+
+        manager.restockProduct(id, amount);
+        
+
+    }
+    
+    private void searchProduct()
+    {
+        System.out.println("\nSearching for Product"); 
+        System.out.println("Enter product ID");
+
+        String value = input.getString();
+
+        int id = Integer.parseInt(value);
+       
+        
+        manager.searchProduct(id);
+
+    }
+    
     /**
      * Removes old products by nullifying them and turning id to "0"
      */
@@ -166,8 +210,9 @@ public class StockApp
         System.out.println();
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Removes a product");
-        System.out.println("    sell:     sells a product");
-        System.out.println("    restock:     restocks all products");
+        System.out.println("    deliver:     delivers a product");
+        System.out.println("    restock:     restocks a product");
+        System.out.println("    search:     Searches for particular product");
         System.out.println("    Print:   Print all products");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        

@@ -27,7 +27,7 @@ public class StockManager
     {
         stock.add(item);
     }
-    
+
     /**
      * Removes a product from the list if it has a valid id
      */
@@ -43,7 +43,7 @@ public class StockManager
             printInvalidID();
         }
     }
-    
+
     /**
      * Receive a delivery of a particular product.
      * Increase the quantity of the product by the given amount.
@@ -62,29 +62,54 @@ public class StockManager
             System.out.println("invalid product id" + id);
         }
     }
+    public void restockProduct(int id, int amount)
+    {
+        Product product = findProduct(id);
+        if(product != null)
+        {
+            product.increaseQuantity(amount);
+        }
+        else
+        {
+            System.out.println("not a valid item");
+        }
+    }
     
+    public void searchProduct(int id)
+    {
+        Product product = findProduct(id);
+        if(product != null)
+        {
+            System.out.println("Product found");
+        }
+        else
+        {
+            System.out.println("invalid item");
+        }
+    }
+
     /**
      * This method allows the appropriate product to be sold from using its unique id and by the quantity 
      */
     public void sellProduct(int id, int amount)
     {
         Product product = findProduct(id);
-        
+
         if(product != null)
         {
             product.sell(amount);
         }
     }
-    
+
     public boolean isDuplicate(int id)
     {
         Product product = findProduct(id);
         if(product == null)
-           return false;
+            return false;
         else
-           return true;
+            return true;
     }
-    
+
     /**
      * prints the name of the product
      */
@@ -98,6 +123,7 @@ public class StockManager
             }
         }
     }
+
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
@@ -126,6 +152,7 @@ public class StockManager
     {
         return stock.size();
     }
+
     /**
      * Show details of the given product. If found,
      * its name and stock quantity will be shown.
@@ -139,7 +166,7 @@ public class StockManager
             System.out.println(product.toString());
         }
     }
-    
+
     /**
      * This allows for a product to be renamed by inserting its unique id, and changing the name.
      */
@@ -155,7 +182,7 @@ public class StockManager
             printInvalidID();
         }
     }
-    
+
     /**
      * prints error message if returned with invalid product ID
      */
@@ -163,7 +190,7 @@ public class StockManager
     {
         System.out.println("Invalid product");
     }
-    
+
     /**
      * prints name with a findName function
      */
@@ -179,6 +206,7 @@ public class StockManager
             }
         }
     }
+
     /**
      * This method will be used to print out all the stock
      */
@@ -191,7 +219,7 @@ public class StockManager
             System.out.println(product);
         }
     }
-    
+
     private void printHeading()
     {
         System.out.println();
@@ -200,7 +228,7 @@ public class StockManager
         System.out.println("===================");
         System.out.println();
     }
-    
+
     /**
      * print function is used if product amount is low 
      */

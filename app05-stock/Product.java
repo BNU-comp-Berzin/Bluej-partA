@@ -110,11 +110,11 @@ public class Product
      */
     public void sell(int saleQuantity)
     {
-       if(saleQuantity >= quantity) 
+        if(saleQuantity >= quantity) 
        {
             System.out.println("only " + quantity + " " + name + " in stock, but there were " + saleQuantity + " ordered ");
             
-            quantity = 10;
+            quantity = 100;
        }
        else 
        {
